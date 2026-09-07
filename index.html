@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodney Timber Floor Sanding | Floor Sanding &amp; Refinishing, Red Beach, Auckland</title>
+<meta name="description" content="Owner-operated timber floor sanding, restoration and refinishing across Rodney, the Hibiscus Coast and Auckland's North Shore. Rimu, matai, oak and kwila. Free quotes.">
+<meta property="og:title" content="Rodney Timber Floor Sanding | Red Beach, Auckland">
+<meta property="og:description" content="Timber floor sanding, restoration and refinishing across Rodney, the Hibiscus Coast and the North Shore. Free quotes.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero-kwila.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171310'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23c05f2e' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171310;
+  --ink-2:#221c15;
+  --ink-3:#2c241b;
+  --bone:#f3efe7;
+  --paper:#faf8f2;
+  --accent:#c05f2e;
+  --accent-deep:#9c4a20;--accent-darker:#7f3a17;
+  --line:rgba(23,19,16,.12);
+  --line-light:rgba(243,239,231,.16);
+  --txt:#3b332a;
+  --txt-light:#d8d2c6;
+  --radius:14px;
+  --disp:'Cormorant Garamond',Georgia,serif;
+  --body:'Outfit',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-weight:300;color:var(--txt);background:var(--paper);font-size:16.5px;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;image-orientation:from-image}
+h1,h2,h3{font-family:var(--disp);font-weight:600;color:var(--ink);line-height:1.12}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit}
+
+/* intro overlay */
+#intro{position:fixed;inset:0;z-index:200;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:opacity .7s ease,visibility .7s}
+#intro .intro-name{font-family:var(--disp);font-weight:600;color:var(--bone);font-size:clamp(1.5rem,4.5vw,2.6rem);letter-spacing:.02em;opacity:0;transform:translateY(14px);animation:introUp .9s cubic-bezier(.16,1,.3,1) .15s forwards}
+#intro .intro-name em{font-style:italic;color:var(--accent);padding-bottom:.15em}
+#intro.done{opacity:0;visibility:hidden}
+@keyframes introUp{to{opacity:1;transform:none}}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(23,19,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-light)}
+.nav{max-width:1200px;margin:0 auto;padding:0 22px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:var(--disp);font-weight:600;font-size:1.22rem;color:var(--bone);text-decoration:none;letter-spacing:.015em;line-height:1.2}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a{color:var(--txt-light);text-decoration:none;font-size:.95rem;font-weight:400;transition:color .25s}
+.nav-links a:hover{color:#fff}
+.call-pill{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;background:var(--accent-deep);color:#fff !important;border-radius:var(--radius);font-weight:500;line-height:1;text-decoration:none;transition:background .25s,transform .25s}
+.call-pill:hover{background:var(--accent-darker);transform:translateY(-1px)}
+.call-pill svg{flex:none}
+#navToggle{display:none;background:none;border:1px solid var(--line-light);border-radius:10px;width:44px;height:44px;color:var(--bone);cursor:pointer;align-items:center;justify-content:center}
+@media(max-width:900px){
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(23,19,16,.97);backdrop-filter:blur(14px);flex-direction:column;align-items:flex-start;padding:18px 22px 24px;gap:4px;border-bottom:1px solid var(--line-light)}
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a:not(.call-pill){display:block;padding:13px 4px;width:100%;font-size:1.05rem}
+  .nav-links .call-pill{margin-top:10px;justify-content:center;width:100%}
+  #navToggle{display:inline-flex}
+}
+
+/* hero */
+.hero{position:relative;min-height:100dvh;background:var(--ink);display:flex;align-items:center;overflow:hidden}
+.hero-slides{position:absolute;inset:0}
+.hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
+.hero-slides .slide.on{opacity:1}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,19,16,.72) 0%,rgba(23,19,16,.48) 45%,rgba(23,19,16,.82) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:110px 22px 64px;width:100%}
+.hero-eyebrow{display:inline-block;color:var(--txt-light);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(2.7rem,6.2vw,4.6rem);max-width:15ch;margin-bottom:22px}
+.hero h1 em{font-style:italic;color:#e8a36f;padding-bottom:.12em;display:inline-block}
+.hero-sub{color:var(--txt-light);max-width:52ch;font-size:1.08rem;margin-bottom:34px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:var(--radius);font-family:var(--body);font-size:1.02rem;font-weight:500;text-decoration:none;line-height:1;transition:transform .25s,background .25s,border-color .25s;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.btn-solid{background:var(--accent-deep);color:#fff}
+.btn-solid:hover{background:var(--accent-darker);transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(243,239,231,.45);color:#fff;background:rgba(23,19,16,.25)}
+.btn-ghost:hover{border-color:#fff;transform:translateY(-2px)}
+.hero-quote{max-width:460px;background:rgba(243,239,231,.08);border:1px solid var(--line-light);border-radius:var(--radius);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:18px 22px}
+.hq-stars{color:#e8a36f;letter-spacing:2px;font-size:.92rem;margin-bottom:6px}
+.hq-quote{color:#f5f2ea;font-size:.97rem;line-height:1.55;min-height:3.1em;transition:opacity .5s}
+.hq-name{color:var(--txt-light);font-size:.85rem;margin-top:8px}
+.hq-fade{opacity:0}
+
+/* sections */
+section{padding:96px 0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(2.1rem,4vw,3rem);margin-bottom:14px}
+.sec-head p{color:var(--txt)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* services */
+#services{background:var(--bone)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(44,32,20,.35)}
+.svc-card .ph{aspect-ratio:4/3;overflow:hidden}
+.svc-card .ph img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.04);transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.svc-card:hover .ph img{transform:scale(1.05)}
+.svc-body{padding:24px 24px 28px}
+.svc-label{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.svc-body h3{font-size:1.5rem;margin-bottom:8px}
+.svc-body p{font-size:.96rem}
+@media(max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}
+.about-photo{position:relative}
+.about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block;filter:saturate(.92) contrast(1.04)}
+.about-tag{position:absolute;left:18px;bottom:18px;background:var(--ink);color:var(--bone);font-size:.85rem;font-weight:400;padding:10px 16px;border-radius:10px;border-left:3px solid var(--accent)}
+.about-copy h2{font-size:clamp(2.1rem,4vw,2.9rem);margin-bottom:18px}
+.about-copy p{margin-bottom:16px}
+.about-list{list-style:none;margin-top:26px;display:grid;gap:14px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;font-weight:400;color:var(--ink-3)}
+.about-list svg{flex:none;color:var(--accent);margin-top:3px}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:36px}}
+
+/* crew */
+#crew{background:var(--ink);}
+#crew .sec-head h2,#crew h3{color:var(--bone)}
+#crew .sec-head p{color:var(--txt-light)}
+.crew-card{display:grid;grid-template-columns:340px 1fr;gap:0;background:var(--ink-2);border:1px solid var(--line-light);border-radius:var(--radius);overflow:hidden;max-width:920px}
+.crew-card .cp{min-height:340px}
+.crew-card .cp img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.04)}
+.crew-body{padding:36px 38px;display:flex;flex-direction:column;justify-content:center}
+.crew-role{color:var(--accent);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.crew-body h3{font-size:1.9rem;margin-bottom:12px}
+.crew-body p{color:var(--txt-light);font-size:.98rem}
+@media(max-width:760px){.crew-card{grid-template-columns:1fr}.crew-card .cp{max-height:360px}}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
+.rev-card{background:var(--bone);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.rev-stars{color:var(--accent);letter-spacing:2px;margin-bottom:12px;font-size:.95rem}
+.rev-text{font-size:.98rem;margin-bottom:16px}
+.rev-name{font-weight:500;color:var(--ink);font-size:.95rem}
+.rev-date{font-size:.85rem;color:#665c50}
+.rev-more{text-align:left}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink-3);transform:translateY(-2px)}
+@media(max-width:760px){.rev-grid{grid-template-columns:1fr}}
+
+/* review banner */
+.banner{background:linear-gradient(120deg,var(--ink) 0%,var(--ink-3) 100%);padding:70px 0}
+.banner-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.banner h2{color:var(--bone);font-size:clamp(1.8rem,3.4vw,2.5rem);max-width:20ch}
+.banner p{color:var(--txt-light);margin-top:8px;max-width:44ch}
+
+/* contact */
+#contact{background:var(--bone)}
+.contact-card{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;max-width:1120px;margin:0 auto}
+.contact-map{min-height:460px}
+.contact-map iframe{width:100%;height:100%;border:0;display:block}
+.contact-body{padding:40px 42px}
+.contact-body h2{font-size:clamp(1.9rem,3.2vw,2.5rem);margin-bottom:10px}
+.contact-body>p{margin-bottom:26px}
+.contact-btns{display:grid;gap:12px;margin-bottom:30px}
+.contact-btns .btn{width:100%}
+.c-rows{display:grid;gap:16px;margin-bottom:28px}
+.c-row{display:flex;gap:14px;align-items:flex-start}
+.c-row svg{flex:none;color:var(--accent);margin-top:3px}
+.c-row a{text-decoration:none;color:var(--ink-3);font-weight:400}
+.c-row a:hover{color:var(--accent)}
+.c-row .lab{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#6f6558;font-weight:500;margin-bottom:2px}
+.socials{display:flex;gap:12px}
+.socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;color:var(--ink-3);transition:all .25s}
+.socials a:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+@media(max-width:880px){.contact-card{grid-template-columns:1fr}.contact-map{min-height:320px;order:2}.contact-body{order:1;padding:32px 24px}}
+
+/* footer */
+footer{background:var(--ink);color:var(--txt-light);padding:60px 0 34px}
+.f-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:44px}
+.f-brand{max-width:340px}
+.f-brand .brand{font-size:1.3rem}
+.f-brand p{font-size:.93rem;margin-top:14px}
+.f-col .f-h{color:var(--bone);font-family:var(--body);font-weight:500;font-size:.95rem;margin-bottom:16px}
+.f-col ul{list-style:none;display:grid;gap:10px}
+.f-col a{color:var(--txt-light);text-decoration:none;font-size:.93rem;transition:color .25s}
+.f-col a:hover{color:#fff}
+footer .socials a{border-color:var(--line-light);color:var(--txt-light)}
+footer .socials a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.f-bottom{border-top:1px solid var(--line-light);padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.85rem;color:#8d8477}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true"><div class="intro-name">Rodney <em>Timber</em> Floor Sanding</div></div>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">Rodney <span>Timber</span> Floor Sanding</a>
+    <button id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="call-pill" href="tel:+6421645259">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        021 645 259</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero" style="padding:0">
+  <div class="hero-slides" aria-hidden="true">
+    <div class="slide on" style="background-image:url('img/hero-kwila.jpg')"></div>
+    <div class="slide" data-src="img/hero-rimu.jpg"></div>
+    <div class="slide" data-src="img/hero-oak.jpg"></div>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Floor Sanding Specialists, Red Beach, Auckland</span>
+    <h1>Bringing tired timber floors <em>back to life</em></h1>
+    <p class="hero-sub">Sanding and refinishing for rimu, matai, oak and kwila floors, across Rodney, the Hibiscus Coast and the North Shore.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="#contact">Get a free quote</a>
+      <a class="btn btn-ghost" href="tel:+6421645259">Call 021 645 259</a>
+    </div>
+    <div class="hero-quote" role="group" aria-label="Google reviews">
+      <div class="hq-stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="hq-quote" id="hqQuote">Our 30 year old solid wood flooring now looks brand new again.</p>
+      <p class="hq-name" id="hqName">Paul Shapcott, on Google</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What we do for your floors</h2>
+      <p>Every job starts with the right preparation and an honest chat about the finish that suits your home and how you live in it.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="ph"><img src="img/card-sanding.jpg" alt="First coat of polyurethane going onto freshly sanded floorboards" loading="lazy" width="675" height="900"></div>
+        <div class="svc-body">
+          <span class="svc-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20h16M6 16l10-10 2 2L8 18l-3 1z"/></svg>Sand &amp; Coat</span>
+          <h3>Floor sanding &amp; refinishing</h3>
+          <p>Boards sanded back to clean timber, then sealed and coated for a hard-wearing finish that lasts.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="ph"><img src="img/card-tawa.jpg" alt="Native tawa floorboards refinished with a matte water-based polyurethane" loading="lazy" width="1316" height="608"></div>
+        <div class="svc-body">
+          <span class="svc-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8c3 2 11 2 14 0M5 16c3-2 11-2 14 0"/></svg>Native Timber</span>
+          <h3>Timber floor restoration</h3>
+          <p>Rimu, matai and tawa boards in older homes brought back carefully, keeping the character of the timber.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="ph"><img src="img/card-poly.jpg" alt="Solid oak floorboards coated with Loba Invisible water-based polyurethane" loading="lazy" width="1033" height="775"></div>
+        <div class="svc-body">
+          <span class="svc-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 7a7 7 0 1 1-14 0z"/></svg>Coating Systems</span>
+          <h3>Polyurethane coating</h3>
+          <p>Loba two-component water-based and solvent-based systems, in matte, satin or gloss to suit your space.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="ph"><img src="img/card-kwila.jpg" alt="Solid kwila timber floor being stained to an elegant brown" loading="lazy" width="416" height="900"></div>
+        <div class="svc-body">
+          <span class="svc-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/></svg>Colour Change</span>
+          <h3>Staining &amp; colour changes</h3>
+          <p>Custom stains that tone down red kwila or dated orange coatings for a warm, modern brown.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="ph"><img src="img/card-stairs.jpg" alt="Oak stairs sanded and refinished with a natural matte polyurethane" loading="lazy" width="675" height="900"></div>
+        <div class="svc-body">
+          <span class="svc-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-4h4v-4h4V8h4V4h4"/></svg>Stairs</span>
+          <h3>Stair sanding</h3>
+          <p>Worn treads and handrails sanded back and recoated so your stairs match the floors around them.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="ph"><img src="img/card-engineered.jpg" alt="Twenty year old engineered oak floorboards resurfaced with hard wax oil" loading="lazy" width="1033" height="775"></div>
+        <div class="svc-body">
+          <span class="svc-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 12h18M12 5v14"/></svg>Engineered &amp; Oiled</span>
+          <h3>Engineered oak &amp; hard wax oil</h3>
+          <p>Engineered boards and oiled floors resurfaced with the right system, including modern blonded looks.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <img src="img/about-coat.jpg" alt="First coat of finish drying on newly sanded timber floorboards in an Auckland home" loading="lazy" width="1033" height="775">
+      <span class="about-tag">Loba water-based finishes</span>
+    </div>
+    <div class="about-copy reveal">
+      <h2>Great floors start with the right preparation</h2>
+      <p>Rodney Timber Floor Sanding is run by Nick from Red Beach on the Hibiscus Coast. The work covers older homes with original floorboards through to newer houses with solid or engineered timber, across Rodney, the North Shore and the wider Auckland region.</p>
+      <p>Every job gets careful prep, attention to detail and clear communication from the first visit to the final coat, with a finish chosen to suit your household, not just the timber.</p>
+      <ul class="about-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Owner-operated, so the person who quotes is the person who sands</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free quotes with straight answers on coating options</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tidy workmanship and a durable, high-quality finish</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="crew">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Who turns up on the day</h2>
+      <p>A sole trader, verified on Builderscrack, doing every floor personally.</p>
+    </div>
+    <div class="crew-card reveal">
+      <div class="cp"><img src="img/nick.webp" alt="Nick Coombe, owner and operator of Rodney Timber Floor Sanding" loading="lazy" width="700" height="700"></div>
+      <div class="crew-body">
+        <span class="crew-role">Owner &amp; Operator</span>
+        <h3>Nick Coombe</h3>
+        <p>Nick handles the whole job himself: inspection, quote, sanding, staining and coating. Clients on Google keep mentioning the same things, that he communicates clearly, turns up when he says he will, and leaves the place tidy. If he cannot fit your job in, he will still point you in the right direction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Rated 5.0 on Google</h2>
+      <p>Real reviews from 38 homeowners across the Hibiscus Coast, North Shore and Auckland.</p>
+    </div>
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="rev-stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">"Nick did an amazing job on our floors! He completely transformed our dated 1990s wooden floors to a more modern look and feel. He is very professional and friendly and tries to find the best solution to suit you. We highly recommend him!"</p>
+        <p class="rev-name">Lisa Fellowes</p>
+        <p class="rev-date">July 2026, on Google</p>
+      </article>
+      <article class="rev-card reveal">
+        <div class="rev-stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">"Nick was a pleasure to work with from start to finish. He is very meticulous, professional and thorough and we are extremely happy with the results. Our 30 year old solid wood flooring now looks brand new again."</p>
+        <p class="rev-name">Paul Shapcott</p>
+        <p class="rev-date">June 2026, on Google</p>
+      </article>
+      <article class="rev-card reveal">
+        <div class="rev-stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">"Nick is professional, punctual, trustworthy and a pleasure to deal with. He did excellent work on restoring our wood floor at a reasonable price point. Highly recommend."</p>
+        <p class="rev-name">Kate Brown</p>
+        <p class="rev-date">April 2026, on Google</p>
+      </article>
+      <article class="rev-card reveal">
+        <div class="rev-stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">"I cannot say enough good things about Nick. The continuous advice, the checking in and quick site visits were absolutely essential. I could not have achieved this result without him."</p>
+        <p class="rev-name">Mitch Kora</p>
+        <p class="rev-date">August 2026, on Google</p>
+      </article>
+    </div>
+    <div class="rev-more reveal">
+      <a class="btn btn-dark" href="https://g.page/rodney-timber-floor-sanding?gm" target="_blank" rel="noopener">See all our Google reviews</a>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="wrap banner-inner">
+    <div class="reveal">
+      <h2>Happy with your floors?</h2>
+      <p>A quick Google review helps other Hibiscus Coast homeowners find the job done right.</p>
+    </div>
+    <a class="btn btn-solid reveal" href="https://g.page/rodney-timber-floor-sanding/review" target="_blank" rel="noopener">Leave us a review</a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="contact-map">
+        <iframe title="Map showing Rodney Timber Floor Sanding in Red Beach, Auckland" src="https://www.google.com/maps?q=Rodney%20Timber%20Floor%20Sanding%2C%203a%20River%20Road%2C%20Red%20Beach%2C%20Auckland&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="contact-body">
+        <h2>Book a free quote</h2>
+        <p>Phone or email with a rough floor area and a couple of photos, and Nick will come back to you with options.</p>
+        <div class="contact-btns">
+          <a class="btn btn-solid" href="tel:+6421645259">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+            Call Rodney Timber Floor Sanding</a>
+          <a class="btn btn-dark" data-gmail data-user="nick" data-domain="rtfs.co.nz" data-su="Floor%20sanding%20quote" href="#contact">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            Email Rodney Timber Floor Sanding</a>
+        </div>
+        <div class="c-rows">
+          <div class="c-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+            <div><span class="lab">Phone</span><a href="tel:+6421645259">021 645 259</a></div>
+          </div>
+          <div class="c-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <div><span class="lab">Email</span><a data-gmail data-user="nick" data-domain="rtfs.co.nz" href="#contact"><span data-emailtext>nick [at] rtfs.co.nz</span></a></div>
+          </div>
+          <div class="c-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><span class="lab">Based at</span>3a River Road, Red Beach, Auckland 0932</div>
+          </div>
+          <div class="c-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><span class="lab">Service area</span>Rodney, Hibiscus Coast, North Shore &amp; wider Auckland</div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/nickRTFS/" target="_blank" rel="noopener" aria-label="Rodney Timber Floor Sanding on Facebook">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.13-2.45-.13-2.4 0-4.05 1.47-4.05 4.17v2.26H7.5V13h2.7v8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=Rodney%20Timber%20Floor%20Sanding" target="_blank" rel="noopener" aria-label="Find Rodney Timber Floor Sanding on Instagram">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="brand" href="#top">Rodney <span>Timber</span> Floor Sanding</a>
+        <p>Timber floor sanding, restoration and refinishing. Based in Red Beach, working across Rodney, the Hibiscus Coast, the North Shore and wider Auckland.</p>
+      </div>
+      <div class="f-col">
+        <h3 class="f-h">Explore</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3 class="f-h">Legal</h3>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h3 class="f-h">Follow</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/nickRTFS/" target="_blank" rel="noopener" aria-label="Rodney Timber Floor Sanding on Facebook">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.13-2.45-.13-2.4 0-4.05 1.47-4.05 4.17v2.26H7.5V13h2.7v8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/explore/search/keyword/?q=Rodney%20Timber%20Floor%20Sanding" target="_blank" rel="noopener" aria-label="Find Rodney Timber Floor Sanding on Instagram">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span id="year">2026</span> Rodney Timber Floor Sanding. All rights reserved.</span>
+      <span>Red Beach, Auckland, New Zealand</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* intro */
+  var intro=document.getElementById('intro');
+  window.addEventListener('load',function(){setTimeout(function(){intro.classList.add('done');},reduced?100:1400);});
+  setTimeout(function(){intro.classList.add('done');},2600);
+
+  /* nav */
+  var t=document.getElementById('navToggle'),links=document.getElementById('navLinks');
+  t.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');t.setAttribute('aria-expanded','false');});});
+
+  /* hero rotation */
+  var slides=[].slice.call(document.querySelectorAll('.hero-slides .slide')),si=0;
+  slides.forEach(function(s){var src=s.getAttribute('data-src');if(src){var i=new Image();i.src=src;s.style.backgroundImage="url('"+src+"')";}});
+  if(!reduced&&slides.length>1){
+    setInterval(function(){
+      slides[si].classList.remove('on');
+      si=(si+1)%slides.length;
+      slides[si].classList.add('on');
+    },6000);
+  }
+
+  /* hero rotating quotes (same data as review cards) */
+  var quotes=[
+    {q:"Our 30 year old solid wood flooring now looks brand new again.",n:"Paul Shapcott, on Google"},
+    {q:"He completely transformed our dated 1990s wooden floors. We highly recommend him!",n:"Lisa Fellowes, on Google"},
+    {q:"Professional, punctual, trustworthy and a pleasure to deal with.",n:"Kate Brown, on Google"},
+    {q:"I could not have achieved this result without him.",n:"Mitch Kora, on Google"}
+  ];
+  var qe=document.getElementById('hqQuote'),ne=document.getElementById('hqName'),qi=0;
+  if(!reduced){
+    setInterval(function(){
+      qe.classList.add('hq-fade');
+      setTimeout(function(){
+        qi=(qi+1)%quotes.length;
+        qe.textContent=quotes[qi].q;
+        ne.textContent=quotes[qi].n;
+        qe.classList.remove('hq-fade');
+      },500);
+    },6500);
+  }
+
+  /* scroll reveals */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  /* gmail compose links */
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+    a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'')+'&body='+(a.getAttribute('data-body')||'');
+    a.target='_blank';a.rel='noopener';
+    var span=a.querySelector('[data-emailtext]');
+    if(span){span.textContent=to;}
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
