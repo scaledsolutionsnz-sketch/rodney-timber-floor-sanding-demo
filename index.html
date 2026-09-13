@@ -8,8 +8,8 @@
 <meta property="og:title" content="Rodney Timber Floor Sanding | Red Beach, Auckland">
 <meta property="og:description" content="Timber floor sanding, restoration and refinishing across Rodney, the Hibiscus Coast and the North Shore. Free quotes.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="img/hero-kwila.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171310'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23c05f2e' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://rodney-timber-floor-sanding-demo.vercel.app/img/hero.webp">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(23,19,16,
 .hero-slides .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
 .hero-slides .slide.on{opacity:1}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,19,16,.72) 0%,rgba(23,19,16,.48) 45%,rgba(23,19,16,.82) 100%)}
-.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:110px 22px 64px;width:100%}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:140px 22px 64px;width:100%}
 .hero-eyebrow{display:inline-block;color:var(--txt-light);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:20px}
 .hero h1{color:#fff;font-size:clamp(2.7rem,6.2vw,4.6rem);max-width:15ch;margin-bottom:22px}
 .hero h1 em{font-style:italic;color:#e8a36f;padding-bottom:.12em;display:inline-block}
@@ -196,6 +196,41 @@ footer .socials a:hover{background:var(--accent);border-color:var(--accent);colo
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
 }
+
+/* Supplied brand and project photography */
+html{scroll-padding-top:110px}
+.brand{display:inline-flex;align-items:center;gap:14px}
+.brand-logo{display:block;width:76px;height:76px;object-fit:contain;border-radius:4px;flex:none}
+.brand .brand-name{color:var(--bone);font-size:1.08rem;line-height:1.2}
+.nav{height:96px}.nav-links{gap:24px}
+.f-brand .brand-logo{width:100px;height:100px}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}
+.project-card a{display:block;overflow:hidden;border-radius:var(--radius);background:var(--bone)}
+.project-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
+.project-card a:hover img{transform:scale(1.035)}
+.project-card figcaption{margin-top:12px;font-size:.96rem;font-weight:400}
+.project-card a:focus-visible,.viewer-bar button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+#transformation{background:var(--bone)}
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:0 auto}
+.comparison img{display:block;width:100%;height:auto;border-radius:var(--radius)}
+.comparison figcaption{font-family:var(--disp);font-size:1.6rem;font-weight:600;margin-top:12px;color:var(--ink)}
+#film{background:var(--ink)}
+.film-layout{display:grid;grid-template-columns:1fr minmax(0,380px);gap:80px;align-items:center;max-width:1000px}
+#film h2{color:var(--bone);font-size:clamp(2.1rem,4vw,3rem);margin-bottom:20px}
+#film p{color:var(--txt-light);margin-bottom:28px;max-width:42ch}
+.reel-frame{width:100%;aspect-ratio:9/16;background:var(--ink-2);border:1px solid var(--line-light);border-radius:var(--radius);overflow:hidden}
+.reel-frame iframe{width:100%;height:100%;border:0;display:block}
+#projectViewer{position:fixed;inset:0;margin:auto;width:min(1100px,94vw);max-width:94vw;max-height:92dvh;padding:18px;background:var(--ink);color:var(--bone);border:1px solid var(--line-light);border-radius:14px}
+#projectViewer::backdrop{background:rgba(0,0,0,.85)}
+.viewer-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.viewer-bar button{min-width:44px;min-height:44px;padding:8px 16px;border:1px solid var(--line-light);border-radius:8px;background:var(--ink-3);color:var(--bone);font:inherit;cursor:pointer}
+#viewerImage{display:block;width:100%;height:70dvh;object-fit:contain}
+#viewerCaption{padding-top:12px;text-align:center}
+@media(max-width:1000px){.brand .brand-name{display:none}}
+@media(max-width:900px){.nav-links{top:96px}.film-layout{gap:36px;grid-template-columns:1fr 340px}}
+@media(max-width:700px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.film-layout{grid-template-columns:1fr}.reel-frame{max-width:380px;margin:auto}.comparison{gap:14px}.brand .brand-name{display:block}.hero-inner{padding-top:136px}.comparison figcaption{font-size:1.25rem}}
+@media(max-width:440px){.project-grid{grid-template-columns:1fr}.brand .brand-name{font-size:1rem}}
+
 </style>
 </head>
 <body>
@@ -204,12 +239,13 @@ footer .socials a:hover{background:var(--accent);border-color:var(--accent);colo
 
 <header>
   <nav class="nav" aria-label="Main">
-    <a class="brand" href="#top">Rodney <span>Timber</span> Floor Sanding</a>
+    <a class="brand" href="#top"><img class="brand-logo" src="img/rtfs-logo.webp" alt="RTFS Floor Sanding" width="76" height="76"><span class="brand-name">Rodney Timber<br>Floor Sanding</span></a>
     <button id="navToggle" aria-label="Open menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Our work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -224,9 +260,9 @@ footer .socials a:hover{background:var(--accent);border-color:var(--accent);colo
 
 <section class="hero" style="padding:0">
   <div class="hero-slides" aria-hidden="true">
-    <div class="slide on" style="background-image:url('img/hero-kwila.jpg')"></div>
-    <div class="slide" data-src="img/hero-rimu.jpg"></div>
-    <div class="slide" data-src="img/hero-oak.jpg"></div>
+    <div class="slide on" style="background-image:url('img/hero.webp')"></div>
+    <div class="slide" data-src="img/project-04.webp"></div>
+    <div class="slide" data-src="img/project-06.webp"></div>
   </div>
   <div class="hero-shade"></div>
   <div class="hero-inner">
@@ -301,6 +337,36 @@ footer .socials a:hover{background:var(--accent);border-color:var(--accent);colo
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><h2>A closer look at our work</h2><p>From family homes and timber stairs to larger commercial floors. Select a photo to see the detail.</p></div>
+    <div class="project-grid"><figure class="project-card"><a href="img/project-01.webp" data-project aria-label="Enlarge: Gloss-finished timber floor by full-height windows"><img src="img/project-01.webp" alt="Gloss-finished timber floor by full-height windows" loading="lazy" width="800" height="600"></a><figcaption>Gloss-finished timber floor by full-height windows</figcaption></figure>
+<figure class="project-card"><a href="img/project-02.webp" data-project aria-label="Enlarge: Floor sanding in a large commercial space"><img src="img/project-02.webp" alt="Floor sanding in a large commercial space" loading="lazy" width="800" height="600"></a><figcaption>Floor sanding in a large commercial space</figcaption></figure>
+<figure class="project-card"><a href="img/project-03.webp" data-project aria-label="Enlarge: Commercial floor preparation"><img src="img/project-03.webp" alt="Commercial floor preparation" loading="lazy" width="800" height="600"></a><figcaption>Commercial floor preparation</figcaption></figure>
+<figure class="project-card"><a href="img/project-04.webp" data-project aria-label="Enlarge: Light timber flooring through a kitchen and living space"><img src="img/project-04.webp" alt="Light timber flooring through a kitchen and living space" loading="lazy" width="800" height="600"></a><figcaption>Light timber flooring through a kitchen and living space</figcaption></figure>
+<figure class="project-card"><a href="img/project-05.webp" data-project aria-label="Enlarge: Natural timber finish in an open-plan kitchen"><img src="img/project-05.webp" alt="Natural timber finish in an open-plan kitchen" loading="lazy" width="800" height="600"></a><figcaption>Natural timber finish in an open-plan kitchen</figcaption></figure>
+<figure class="project-card"><a href="img/project-06.webp" data-project aria-label="Enlarge: Timber flooring opening onto a coastal view"><img src="img/project-06.webp" alt="Timber flooring opening onto a coastal view" loading="lazy" width="800" height="600"></a><figcaption>Timber flooring opening onto a coastal view</figcaption></figure>
+<figure class="project-card"><a href="img/project-07.webp" data-project aria-label="Enlarge: Restored floorboards in a sunlit room"><img src="img/project-07.webp" alt="Restored floorboards in a sunlit room" loading="lazy" width="800" height="600"></a><figcaption>Restored floorboards in a sunlit room</figcaption></figure>
+<figure class="project-card"><a href="img/project-08.webp" data-project aria-label="Enlarge: Refinished steps and hallway"><img src="img/project-08.webp" alt="Refinished steps and hallway" loading="lazy" width="800" height="600"></a><figcaption>Refinished steps and hallway</figcaption></figure>
+<figure class="project-card"><a href="img/project-09.webp" data-project aria-label="Enlarge: Timber stairs and hallway"><img src="img/project-09.webp" alt="Timber stairs and hallway" loading="lazy" width="800" height="600"></a><figcaption>Timber stairs and hallway</figcaption></figure></div>
+  </div>
+</section>
+<section id="transformation">
+  <div class="wrap">
+    <div class="sec-head"><h2>Before &amp; after</h2><p>A fresh finish brings the warmth and grain of the timber back into focus.</p></div>
+    <div class="comparison">
+      <figure><img src="img/before.webp" alt="Timber living-room floor before refinishing" loading="lazy" width="1024" height="1536"><figcaption>Before refinishing</figcaption></figure>
+      <figure><img src="img/after.webp" alt="The same living-room timber floor after refinishing" loading="lazy" width="1024" height="1536"><figcaption>The finished floor</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section id="film">
+  <div class="wrap film-layout">
+    <div><h2>See more in motion</h2><p>Watch our floor sanding reel, shared from Rodney Timber Floor Sanding on Facebook.</p><a class="btn btn-ghost" href="https://www.facebook.com/reel/1853206312060649" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
+    <div class="reel-frame"><iframe title="Rodney Timber Floor Sanding Facebook reel" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1853206312060649&amp;show_text=false&amp;width=380" width="380" height="676" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>
   </div>
 </section>
 
@@ -437,19 +503,21 @@ footer .socials a:hover{background:var(--accent);border-color:var(--accent);colo
 </section>
 
 </main>
+<dialog id="projectViewer" aria-label="Project photos"><div class="viewer-bar"><button type="button" id="previousPhoto" aria-label="Previous photo">←</button><span id="photoCount"></span><button type="button" id="nextPhoto" aria-label="Next photo">→</button><button type="button" id="closeViewer">Close ×</button></div><img id="viewerImage" alt=""><p id="viewerCaption"></p></dialog>
 
 <footer>
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <a class="brand" href="#top">Rodney <span>Timber</span> Floor Sanding</a>
+        <a class="brand" href="#top"><img class="brand-logo" src="img/rtfs-logo.webp" alt="RTFS Floor Sanding" width="76" height="76"><span class="brand-name">Rodney Timber<br>Floor Sanding</span></a>
         <p>Timber floor sanding, restoration and refinishing. Based in Red Beach, working across Rodney, the Hibiscus Coast, the North Shore and wider Auckland.</p>
       </div>
       <div class="f-col">
         <h3 class="f-h">Explore</h3>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Our work</a></li>
+      <li><a href="#about">About</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -483,6 +551,16 @@ footer .socials a:hover{background:var(--accent);border-color:var(--accent);colo
 <script>
 (function(){
   var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Project gallery: keyboard navigation and native dialog focus handling. */
+  var photos=Array.from(document.querySelectorAll('[data-project]')), viewer=document.getElementById('projectViewer'),photoIndex=0;
+  function showPhoto(index){photoIndex=(index+photos.length)%photos.length;var img=photos[photoIndex].querySelector('img');document.getElementById('viewerImage').src=photos[photoIndex].href;document.getElementById('viewerImage').alt=img.alt;document.getElementById('viewerCaption').textContent=img.alt;document.getElementById('photoCount').textContent=(photoIndex+1)+' / '+photos.length;}
+  photos.forEach(function(a,index){a.addEventListener('click',function(e){e.preventDefault();showPhoto(index);viewer.showModal();});});
+  document.getElementById('closeViewer').onclick=function(){viewer.close();};
+  document.getElementById('previousPhoto').onclick=function(){showPhoto(photoIndex-1);};
+  document.getElementById('nextPhoto').onclick=function(){showPhoto(photoIndex+1);};
+  viewer.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();showPhoto(photoIndex-1);}if(e.key==='ArrowRight'){e.preventDefault();showPhoto(photoIndex+1);}});
+  viewer.addEventListener('click',function(e){if(e.target===viewer){var r=viewer.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)viewer.close();}});
 
   /* intro */
   var intro=document.getElementById('intro');
