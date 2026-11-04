@@ -1,9 +1,9 @@
 var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Mobile menu (Escape closes and returns focus)
+// Mobile menu (Escape closes and returns focus; opened from the keyboard, focus moves to the first link)
 var burger=document.getElementById('burger'),links=document.getElementById('navLinks');
 if(burger){
-  burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu');});
+  burger.addEventListener('click',function(e){var o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu');if(o&&e.detail===0){var first=links.querySelector('a');if(first)first.focus();}});
   links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');burger.focus();}});
 }
@@ -19,18 +19,26 @@ window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(o
 onScroll();
 
 // Hero Ken Burns crossfade with pause/play
-var hero=document.querySelector('.hero'),slides=document.querySelectorAll('#heroSlides img'),dots=document.querySelectorAll('#dots span'),toggle=document.getElementById('slideToggle'),cur=0,timer=null,paused=false;
+// Slides 2 to 4 only download after the page has loaded, so they never hold up the first photo
+var hero=document.querySelector('.hero'),slides=document.querySelectorAll('#heroSlides img'),dots=document.querySelectorAll('#dots span'),toggle=document.getElementById('slideToggle'),cur=0,timer=null,paused=false,slidesQueued=false;
+function loadSlides(){
+  if(slidesQueued)return;slidesQueued=true;
+  function go(){slides.forEach(function(img){var s=img.getAttribute('data-srcset');if(s){img.srcset=s;img.src=img.getAttribute('data-src');}});}
+  if(document.readyState==='complete')go();else window.addEventListener('load',go);
+}
 function next(){
+  var n=(cur+1)%slides.length;
+  if(!(slides[n].complete&&slides[n].naturalWidth))return; // next photo still downloading: keep this one up and try again next turn
   slides[cur].classList.remove('active');if(dots[cur])dots[cur].classList.remove('on');
-  cur=(cur+1)%slides.length;
+  cur=n;
   void slides[cur].offsetWidth;
   slides[cur].classList.add('active');if(dots[cur])dots[cur].classList.add('on');
 }
-function start(){if(!timer&&slides.length>1)timer=setInterval(next,6000);}
+function start(){loadSlides();if(!timer&&slides.length>1)timer=setInterval(next,6000);}
 function stop(){clearInterval(timer);timer=null;}
 function setPaused(p){
   paused=p;if(hero)hero.classList.toggle('paused',p);
-  if(toggle){toggle.setAttribute('aria-pressed',p);toggle.setAttribute('aria-label',p?'Play slideshow':'Pause slideshow');}
+  if(toggle)toggle.setAttribute('aria-pressed',p); // label stays "Pause slideshow"; aria-pressed carries the state
   if(p)stop();else start();
 }
 if(slides.length){
@@ -69,7 +77,7 @@ if('IntersectionObserver' in window&&!reduce){
 
 // Click-to-play Facebook videos (iframe only loads when tapped)
 document.querySelectorAll('.video-cover').forEach(function(btn){
-  btn.addEventListener('click',function(){
+  btn.addEventListener('click',function(e){
     var f=document.createElement('iframe');
     f.src='https://www.facebook.com/plugins/video.php?href='+encodeURIComponent(btn.getAttribute('data-video'))+'&show_text=false&width=360&autoplay=true';
     f.title=btn.getAttribute('data-title');
@@ -77,11 +85,8 @@ document.querySelectorAll('.video-cover').forEach(function(btn){
     f.setAttribute('allowfullscreen','');
     f.setAttribute('scrolling','no');
     btn.replaceWith(f);
+    if(e.detail===0)f.focus(); // opened from the keyboard: keep focus on the video
   });
 });
-
-// Gmail compose links (email built in JS so Cloudflare can't rewrite it)
-document.querySelectorAll('a[data-gmail]').forEach(function(a){var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'')+'&body='+(a.getAttribute('data-body')||'');a.target='_blank';a.rel='noopener';});
-var et=document.getElementById('emailText');if(et)et.textContent='nick'+'@'+'rtfs.co.nz';
 
 var yr=document.getElementById('year');if(yr)yr.textContent=new Date().getFullYear();
